@@ -1,4 +1,26 @@
 
+
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes fading {
+  o% {
+    opacity: 100%;
+  } 
+  50% {
+    opacity: 65%;
+  }
+  100% {
+    opacity: 35%;
+  }
+}
+
 .page {
   min-width: 1100px;
   /* мы ещё не умеем делать мобильную версию сайта, */
@@ -18,7 +40,9 @@
   max-height: 756px;
   background-color: #f2f2f2;
   margin: 0 auto;
+  padding: 0;
   position: relative;
+  overflow: hidden;
   /* выше установили ограничения для секции */
 }
 
@@ -29,14 +53,13 @@
 
 .logo_place_header {
   position: absolute;
-  height: 32px;
-  width: 183px;
   top: 30px;
   left: 64px;
 }
 
 .header__title {
   margin: 0 0 0 64px;
+  padding: 0;
   line-height: 96px;
   max-width: 730px;
   font-size: 102px;
@@ -48,6 +71,7 @@
   position: absolute;
   bottom: 30px;
   margin: 0;
+  padding: 0;
   line-height: 25px;
   max-width: 388px;
   font-size: 18px;
@@ -59,6 +83,10 @@
 .header__link {
   text-decoration: none;
   color: #2f80ed;
+}
+
+.header__link:hover {
+  animation: fading 0.6s linear 0s infinite alternate forwards;
 }
 
 .header__main-illustration {
@@ -80,16 +108,22 @@
   z-index: 1;
 }
 
+.rotation {
+  animation: rotation 20s linear 0s infinite normal; 
+}
+
 .two-columns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
   margin: 100px auto;
+  padding: 0;
 }
 
 .two-columns__brief {
   margin: 0;
+  padding: 0;
   width: 175px;
   line-height: 1.2;
   font-size: 18px;
@@ -98,12 +132,15 @@
 }
 
 .two-columns__main-text {
+  margin: 0;
+  padding: 0;
   min-width: 784px;
   width: 80%;
 }
 
 .two-columns__paragraph {
   margin: 0 0 30px;
+  padding: 0;
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
@@ -111,6 +148,7 @@
 
 .two-columns__paragraph:last-child {
   margin: 0;
+  padding: 0;
 }
 
 .two-columns__span-accent {
@@ -118,60 +156,78 @@
   font-size: 24px;
   font-weight: bold;
   margin: 0 auto;
+  padding: 0;
 }
 
-.section-title {
-  width: 60%;
-  margin: 100px auto 20px;
-  text-align: center;
-  line-height: 1.15;
-  font-size: 60px;
-  font-weight: bold;
+.techniques {
+  width: 80%;
+  margin: 0 auto 100px;
+  padding: 0;
 }
 
-.section-subtitle {
-  width: 60%;
+.cards {
+  width: 920px;
   margin: 0 auto;
-  text-align: center;
-  line-height: 34px;
-  font-size: 24px;
-  font-weight: normal;
-}
-
-.table {
-  width: 1100px;
+  padding: 0;
   display: flex;
-  margin: 0 auto;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-bottom: 100px;
 }
 
-.table__cell {
-  width: 250px;
-  margin: 60px 0 0 0;
+.cards__item {
+  margin: 0;
+  padding: 0;
+  width: 240px;
 }
 
-.table__heading {
+.cards__image {
+  margin: 0;
+  padding: 60px 40px 43px;
+  width: 160px;
+  height: 160px;
+  border-radius: 51%; 
+}
+
+.cards__title {
+  padding: 0;
+  margin: 0 auto 16px;
+  text-align: center;
   line-height: 1.15;
   font-size: 24px;
   font-weight: bold;
-  margin: 0;
 }
 
-.table__text {
-  line-height: 1.2;
+.cards__description {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  line-height: 23px;
   font-size: 18px;
   font-weight: normal;
-  margin: 20px 0 0;
+}
+
+.video__iframes {
+  position: relative;
+  display: flex;
+  width: 1050px;
+  padding: 0;
+  margin: 50px auto -60px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.oakley {
+  margin: 0;
+  padding: 60px 0 0.1px;
+  background-color: #f2f2f2;
 }
 
 .feynman {
   display: block;
   min-height: 790px;
+  margin-bottom: 100px;
   background-color: #f2f2f2;
-  padding-top: 100px;
   position: relative;
   z-index: 1;
 }
@@ -179,6 +235,7 @@
 .feynman__title {
   width: 648px;
   margin: 0 auto 70px;
+  padding: 0;
   text-align: center;
   line-height: 1.15;
   font-size: 120px;
@@ -187,6 +244,7 @@
 
 .feynman__subtitle {
   margin: 0;
+  padding: 0;
   line-height: 51px;
   font-size: 36px;
   font-weight: normal;
@@ -194,14 +252,20 @@
 }
 
 .feynman__link {
+  margin: 0;
+  padding: 0;
   line-height: 51px;
   font-size: 36px;
   font-weight: normal;
   color: #2f80ed;
   text-decoration: none;
   position: absolute;
-  top: 50%;
+  top: 345px;
   right: 46px;
+}
+
+.feynman__link:hover {
+  animation: fading 0.6s linear 0s infinite alternate forwards;
 }
 
 .feynman__image {
@@ -213,9 +277,145 @@
   bottom: 0;
 }
 
+.section-title {
+  width: 60%;
+  margin: 0 auto 20px;
+  padding: 0;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.section-subtitle {
+  width: 60%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.table {
+  width: 1100px;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+}
+
+.table__cell {
+  width: 250px;
+  margin: 60px 0 0 0;
+  padding: 0;
+}
+
+.table__heading {
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.table__text {
+  line-height: 1.2;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.khan {
+  padding-top: 105px;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+.khan__container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.khan__author {
+  margin: 0;
+  padding: 0;
+  line-height: 42px;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.khan__title {
+  margin: 0 0 50px;
+  padding: 0;
+  line-height: 1.15;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.khan__quote {
+  width: 790px;
+  margin: 0 0 36px;
+  padding: 0;
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.khan__quote-author {
+  margin: 0 0 10px;
+  padding: 0;
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.khan__quote-author-subline {
+  margin: 0 0 68px;
+  padding: 0;
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.khan__book-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.khan__book-pic {
+  height: 608px;
+  width: 620px;
+  margin-right: 48px;
+  padding: 0;
+  object-position: top;
+  object-fit: cover;
+}
+
+.khan__buy-link {
+  margin: 0;
+  padding: 0;
+  line-height: 42px;
+  font-size: 30px;
+  font-weight: normal;
+  color: #2f80ed;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.khan__buy-link:hover {
+  animation: fading 0.6s linear 0s infinite alternate forwards;
+}
+
 .kaufman {
   padding-top: 90px;
   padding-bottom: 90px;
+  margin-bottom: 100px;
   background-color: #1f1f1f;
   position: relative;
   overflow: hidden;
@@ -224,6 +424,7 @@
 
 .section-title_theme_dark {
   margin: 0 auto 20px;
+  padding: 0;
   color: white;
 }
 
@@ -234,6 +435,7 @@
 .table__cell_theme_dark {
   width: 200px;
   margin: 80px 0 0 0;
+  padding: 0;
 }
 
 .table_theme_dark {
@@ -244,11 +446,13 @@
 .table__heading_theme_dark {
   color: white;
   margin: 0 0 20px;
+  padding: 0;
 }
 
 .table__text_theme_dark {
   color: white;
   margin: 0;
+  padding: 0;
 }
 
 .kaufman__triangle {
@@ -262,10 +466,27 @@
   z-index: -1;
 }
 
+.resources {
+  margin: 0 0 217px;
+  padding: 0;
+}
+
+.resources__logo-zone {
+  margin: 80px auto 0;
+  padding: 0;
+  width: 1100px;
+}
+
+.resources__logo {
+  width: 270px;
+  height: 38px;
+}
+
 .footer {
   min-height: 250px;
   padding-top: 60px;
   padding-bottom: 40px;
+  margin: 0;
   background-color: #1f1f1f;
 }
 
@@ -273,6 +494,7 @@
   min-height: 250px;
   width: 90%;
   margin: 0 auto;
+  padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -286,12 +508,12 @@
 }
 
 .logo_place_footer {
-width: 183px;
-height: 35px;
+  height: 35px;
 }
 
 .footer__author {
   margin: 18px 0 18px;
+  padding: 0;
   line-height: 25px;
   font-size: 18px;
   font-weight: normal;
@@ -304,6 +526,7 @@ height: 35px;
 
 .footer__column-heading {
   margin: 0 0 20px;
+  padding: 0;
   line-height: 30px;
   font-size: 18px;
   font-weight: bold;
@@ -317,11 +540,17 @@ height: 35px;
 }
 
 .footer__column-link {
+  margin: 0;
+  padding: 0;
   line-height: 30px;
   font-size: 18px;
   font-weight: normal;
   text-decoration: none;
   color: white;
+}
+
+.footer__column-link:hover {
+  animation: fading 0.6s linear 0s infinite alternate forwards;
 }
 
 .footer__column_content_social {
@@ -332,3 +561,4 @@ height: 35px;
   margin-right: 10px;
 }
 
+*/
