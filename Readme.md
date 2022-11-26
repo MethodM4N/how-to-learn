@@ -1,4 +1,5 @@
 # How-to-learn  (проектная работа №1/№2 by [Yandex.Practicum](https://practicum.yandex.ru/profile/web/ "Практикум"))
+### Ссылка на лэндинг [клац](https://methodm4n.github.io/how-to-learn/ "Ссылка на проект").
 ----
 В данной проектной работе были освоены и использованы такие **технологии** как:
 ```HTML
